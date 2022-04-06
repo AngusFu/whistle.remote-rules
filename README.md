@@ -5,3 +5,8 @@
 - 针对whistle web服务，增加remoteRules参数解析，支持URL值
 - 插件解析该参数并下载该rule
 - 调用whistle加载该rule
+
+## docs
+- https://github.com/orgs/whistle-plugins/repositories
+- https://github.com/avwo/lack
+- https://wproxy.org/whistle/plugins.html
