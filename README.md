@@ -10,3 +10,19 @@
 - https://github.com/orgs/whistle-plugins/repositories
 - https://github.com/avwo/lack
 - https://wproxy.org/whistle/plugins.html
+
+## get started
+
+```
+$ npm i -g lack
+
+$ npm run dev
+
+$ npm link
+
+$ w2 stop
+
+# 开启调试模式
+$ w2 run
+
+```
