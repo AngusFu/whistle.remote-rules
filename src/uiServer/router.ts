@@ -20,7 +20,7 @@ export default (router: Router) => {
           fs.writeFileSync(filename, data, { encoding: 'utf8' });
           execSync(`w2 add ${filename} --force`);
           execSync(`rm ${filename}`);
-          ctx.redirect('/');
+          ctx.redirect('/#rules');
         });
       }).on('error', (e) => {
         console.error(e);
