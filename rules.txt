@@ -1,2 +1,0 @@
-# 内置规则
-http://remote.whistlejs.com whistle.remote-rules://

@@ -28,4 +28,4 @@ $ w2 run
 ```
 
 ## 使用
-访问`http://remote.whistlejs.com/?remoteRules=https%3A%2F%2Fgist.githubusercontent.com%2Falanhg%2Fa950d216121002d5bb0fd1278789da75%2Fraw%2Fc8bdf23e05c9dc504ea393a0b373cb556df911d8%2Ftest-whistle.js`
+访问`http://local.whistlejs.com/whistle.remote-rules?remoteRules=https%3A%2F%2Fgist.githubusercontent.com%2Falanhg%2Fa950d216121002d5bb0fd1278789da75%2Fraw%2Fc8bdf23e05c9dc504ea393a0b373cb556df911d8%2Ftest-whistle.js`
