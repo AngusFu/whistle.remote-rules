@@ -26,3 +26,6 @@ $ w2 stop
 $ w2 run
 
 ```
+
+## 使用
+访问`http://remote.whistlejs.com/?remoteRules=https%3A%2F%2Fraw.githubusercontent.com%2Falanhg%2Fwhistle.remote-rules%2F95d4729e13eaf8cbdf9ea120181a5f4c151cc589%2Ftest-whistle.js`

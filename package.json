@@ -1,7 +1,7 @@
 {
   "name": "whistle.remote-rules",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "    ",
   "scripts": {
     "dev": "tsc -w"
   },
@@ -13,10 +13,12 @@
     "@types/koa-static": "^4.0.2"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0",
-    "koa-static": "^5.0.0"
+    "koa-static": "^5.0.0",
+    "query-string": "^7.1.1"
   }
 }
