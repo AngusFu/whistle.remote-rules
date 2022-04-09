@@ -3,6 +3,12 @@ import qs from 'querystring';
 import fs from 'fs';
 import { execSync } from 'child_process';
 import https from 'https';
+import http from 'http';
+
+function httpClient(url) {
+  const isHTTPS = url.match(/^https/);
+  return isHTTPS ? https : http;
+}
 
 // For help see https://github.com/ZijianHe/koa-router#api-reference
 export default (router: Router) => {
@@ -12,7 +18,7 @@ export default (router: Router) => {
       try {
         const data: string = await new Promise((resolve, reject) => {
           let temp = '';
-          https.get(remoteRules, function (res) {
+          httpClient(remoteRules).get(remoteRules, function (res) {
             res.setEncoding('utf8');
             res.on('data', function (chunk) {
               temp += chunk;
