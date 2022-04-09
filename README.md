@@ -36,10 +36,10 @@ $ w2 run
 
 $ npm i whistle -g
 
-$ npm i whistle.script -g 
+$ npm i whistle.remote-rules -g 
 # or
 
-$ w2 i whistle.script
+$ w2 i whistle.remote-rules
 
 ```
 
