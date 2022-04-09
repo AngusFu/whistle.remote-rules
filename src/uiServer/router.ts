@@ -17,10 +17,11 @@ export default (router: Router) => {
         });
         res.on('end', function () {
           const filename = `${__dirname}/_temp.js`;
+          const ruleName = data.match(/(?<=\.name\s?=\s?(`|'|")).+(?=\1)/)?.[0];
           fs.writeFileSync(filename, data, { encoding: 'utf8' });
           execSync(`w2 add ${filename} --force`);
           execSync(`rm ${filename}`);
-          ctx.redirect('/#rules');
+          ctx.redirect(`/#rules?ruleName=${qs.escape(ruleName)}`);
         });
       }).on('error', (e) => {
         console.error(e);
