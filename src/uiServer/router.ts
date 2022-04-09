@@ -21,7 +21,7 @@ export default (router: Router) => {
           fs.writeFileSync(filename, data, { encoding: 'utf8' });
           execSync(`w2 add ${filename} --force`);
           execSync(`rm ${filename}`);
-          ctx.redirect(`/#rules?ruleName=${qs.escape(ruleName)}`);
+          ctx.redirect(`/#rules?ruleName=${ruleName ? qs.escape(ruleName) : ''}`);
         });
       }).on('error', (e) => {
         console.error(e);
