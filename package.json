@@ -1,7 +1,7 @@
 {
   "name": "whistle.remote-rules",
-  "version": "0.1.0",
-  "description": "       ",
+  "version": "1.0.0",
+  "description": "load remote-rules url",
   "scripts": {
     "dev": "tsc -w"
   },
