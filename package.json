@@ -5,6 +5,11 @@
   "scripts": {
     "dev": "tsc -w"
   },
+  "author": {
+    "name": "Alan He",
+    "url": "https://1991421.cn"
+  },
+  "repository": "https://github.com/alanhg/whistle.remote-rules",
   "devDependencies": {
     "typescript": "^4.6.2",
     "@types/koa": "^2.13.4",
