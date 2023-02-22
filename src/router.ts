@@ -78,13 +78,16 @@ async function sync() {
 }
 
 async function install(url: string) {
-  const { data } = await axios.get(url, { responseType: "text" });
-  const ruleName = data.match(/(?<=\.name\s?=\s?(`|'|")).+(?=\1)/)?.[0];
+  const e = encodeURIComponent;
+
+  let { data } = await axios.get(url, { responseType: "text" });
+  const res = /^# @rulName="([^"]+?)"/.exec(data.trim());
+  const ruleName = res ? res[0] : "";
 
   // TODO
   await axios.post(
     "http://127.0.0.1:8899/cgi-bin/rules/select",
-    `name=${ruleName}&value=${data}&active=true&changed=true`
+    `name=${e(ruleName)}&value=${e(data)}&active=true&changed=true`
   );
 
   return { ruleName };
