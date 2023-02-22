@@ -62,3 +62,4 @@ typings/
 /.history
 /dist
 .idea
+package-lock.json

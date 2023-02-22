@@ -1,6 +1,6 @@
 {
   "name": "whistle.sync-remote-rules",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "sync remote-rules url",
   "scripts": {
     "dev": "tsc -w"

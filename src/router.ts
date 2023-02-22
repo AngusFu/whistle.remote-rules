@@ -82,7 +82,7 @@ async function install(url: string) {
 
   let { data } = await axios.get(url, { responseType: "text" });
   const res = /^# @rulName="([^"]+?)"/.exec(data.trim());
-  const ruleName = res ? res[0] : "";
+  const ruleName = res ? res[1] : "";
 
   // TODO
   await axios.post(
