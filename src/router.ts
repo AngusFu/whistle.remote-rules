@@ -1,14 +1,6 @@
 import Router from "koa-router";
 import fs from "fs-extra";
-import { execSync } from "child_process";
-import https from "https";
-import http from "http";
-
-function httpClient(url: string) {
-  const isHTTPS = url.match(/^https/);
-
-  return isHTTPS ? https : http;
-}
+import axios from "axios";
 
 const taskFilePath = __dirname + "/tasks.txt";
 fs.ensureFileSync(taskFilePath);
@@ -86,28 +78,14 @@ async function sync() {
 }
 
 async function install(url: string) {
-  const data: string = await new Promise((resolve, reject) => {
-    let temp = "";
-    httpClient(url)
-      .get(url, function (res) {
-        res.setEncoding("utf8");
-        res.on("data", function (chunk) {
-          temp += chunk;
-        });
-        res.on("end", function () {
-          resolve(temp);
-        });
-      })
-      .on("error", reject);
-  });
-
-  const filename = `${__dirname}/_temp.js`;
-
-  await fs.writeFile(filename, data, { encoding: "utf8" });
-  execSync(`w2 add ${filename} --force`);
-  execSync(`rm ${filename}`);
-
+  const { data } = await axios.get(url, { responseType: "text" });
   const ruleName = data.match(/(?<=\.name\s?=\s?(`|'|")).+(?=\1)/)?.[0];
+
+  // TODO
+  await axios.post(
+    "http://127.0.0.1:8899/cgi-bin/rules/select",
+    `name=${ruleName}&value=${data}&active=true&changed=true`
+  );
 
   return { ruleName };
 }
